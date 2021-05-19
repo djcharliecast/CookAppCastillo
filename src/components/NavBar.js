@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, IconButton, Typography, Button } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
+import CartWidget from "./CartWidget";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,11 +26,12 @@ const classes = useStyles();
           </IconButton>
           <Typography variant="h5" className={classes.title}>
             CookApp
-          </Typography>
+          </Typography>D
           <Button color="inherit">Categoría 1</Button>
           <Button color="inherit">Categoría 2</Button>
           <Button color="inherit">Categoría 3</Button>
           <Button color="inherit">Categoría 4</Button>
+          <CartWidget/>
         </Toolbar>
       </AppBar>
     )
