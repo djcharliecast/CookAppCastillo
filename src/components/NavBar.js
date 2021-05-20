@@ -26,7 +26,7 @@ const classes = useStyles();
           </IconButton>
           <Typography variant="h5" className={classes.title}>
             CookApp
-          </Typography>D
+          </Typography>
           <Button color="inherit">Categoría 1</Button>
           <Button color="inherit">Categoría 2</Button>
           <Button color="inherit">Categoría 3</Button>
