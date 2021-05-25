@@ -1,5 +1,6 @@
 import { Button } from "@material-ui/core";
 import {useState} from "react";
+import "./styles.css";
 
 
 
@@ -17,9 +18,9 @@ const ItemCounter = (props)=> {
     return (
         <div>
             <h5>{props.nombre}</h5>
-            <Button onClick={restar}>-</Button>
+            <Button className="botonSumaResta" onClick={restar}>-</Button>
             <span>{count}</span>
-            <Button onClick={sumar}>+</Button>
+            <Button className="botonSumaResta" onClick={sumar}>+</Button>
         </div>
     )
     

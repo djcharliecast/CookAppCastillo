@@ -1,0 +1,28 @@
+body{
+    background-color:#edd664;
+}
+
+
+.botonSumaResta{
+    background-color:#7bed87!important;
+    border-radius: 10px!important;
+    margin-right: 10px!important;
+    margin-left: 10px!important;
+    color:white!important;
+}
+
+.tarjetaProductos{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: solid 3px blacl;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.contenedorTarjetas{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
