@@ -5,7 +5,7 @@ function Item (props) {
     return (
     <div className="tarjetaProductos">
     <h1>{props.titulo}</h1>
-    <div>Precio: $ {props.precio}</div>
+    <p>Precio: $ {props.precio}</p>
     <ItemCount cantidad={1} stock={props.stock}/>
     </div>
     )
