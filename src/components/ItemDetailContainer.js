@@ -40,11 +40,9 @@ useEffect(()=>{
 return (
     <div className="contenedorTarjetas">
     {
-        productos.map(producto => (
         <>
-        <ItemDetail titulo={producto.nombre} precio={producto.precio} stock={producto.stock} img={producto.img} descripcion={producto.descripcion}/>
+        <ItemDetail titulo={productos[0]?.nombre} precio={productos[0]?.precio} stock={productos[0]?.stock} img={productos[0]?.img} descripcion={productos[0]?.descripcion}/>
         </>
-        ))
     }
     </div>
 )
