@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import ItemDetail from './ItemDetail';
 import "./styles.css";
-import crackers from '../images/crackers.jpg'
-import panLomo from '../images/panLomo.jpg'
-import pizza from '../images/pizza.jpg'
+import crackers from '../images/crackers.jpg';
+import panLomo from '../images/panLomo.jpg';
+import pizza from '../images/pizza.jpg';
+import {useParams} from 'react-router-dom';
+
 
 //funcion que simula una API
 function mock(success) {
@@ -24,6 +26,7 @@ return new Promise((resolve, reject) => {
 
 //comienzo del componente
 function ItemDetailContainer() {
+    const {id}= useParams();
   //useState para actualizar el valor del array productos
 const [productos, setProductos] = useState([])
 
@@ -37,14 +40,19 @@ useEffect(()=>{
     obtenerDatos()
 }, [])
 
+var retorno = ""
+
+for (const item of productos){
+    if (parseInt(id) == item.id){
+        retorno = <ItemDetail titulo={item.nombre} precio={item.precio} stock={item.stock} img={item.img} descripcion={item.descripcion}/>
+    }}
+
+
 return (
     <div className="contenedorTarjetas">
-    {
-        <>
-        <ItemDetail titulo={productos[0]?.nombre} precio={productos[0]?.precio} stock={productos[0]?.stock} img={productos[0]?.img} descripcion={productos[0]?.descripcion}/>
-        </>
-    }
+        {retorno}
     </div>
 )
+
 }
 export default ItemDetailContainer;

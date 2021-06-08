@@ -1,4 +1,4 @@
-import ItemCount from './ItemCount';
+import { NavLink } from "react-router-dom";
 import "./styles.css";
 
 function Item (props) {
@@ -6,7 +6,7 @@ function Item (props) {
     <div className="tarjetaProductos">
     <h1>{props.titulo}</h1>
     <p>Precio: $ {props.precio}</p>
-    <ItemCount cantidad={1} stock={props.stock}/>
+    <NavLink to={`/detalles/${props.id}`}> Ver detalles</NavLink>
     </div>
     )
 }

@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
-import Item from './Item';
+import ItemDetail from './ItemDetail';
 import "./styles.css";
+import crackers from '../images/crackers.jpg';
+import panLomo from '../images/panLomo.jpg';
+import pizza from '../images/pizza.jpg';
+
+
 
 //funcion que simula una API
 function mock(success) {
@@ -8,9 +13,9 @@ return new Promise((resolve, reject) => {
     setTimeout(() => {
         if (success) {
         resolve([
-        {id: 1, nombre: "Pan Nube", precio: 180, stock: 20 },
-        {id: 2, nombre: "Pizza", precio: 150, stock: 15 },
-        {id: 3, nombre: "Crackers", precio: 100, stock: 12 }
+        {id: 1, nombre: "Pan de Lomo", precio: 180, stock: 20, img: panLomo, descripcion: "Pan de lomo a base de huevo sin harina" },
+        {id: 2, nombre: "Pizza", precio: 150, stock: 15, img: pizza, descripcion: "Prepizza a base de huevo sin harina" },
+        {id: 3, nombre: "Crackers", precio: 100, stock: 12, img: crackers, descripcion: "Galletas crocantes a base de semillas sin harina" }
         ]);
     } else {
         reject({ message: "Errorcito" });
@@ -20,7 +25,8 @@ return new Promise((resolve, reject) => {
 }
 
 //comienzo del componente
-function ItemList() {
+function AllItemsDetailContainer() {
+
   //useState para actualizar el valor del array productos
 const [productos, setProductos] = useState([])
 
@@ -34,16 +40,18 @@ useEffect(()=>{
     obtenerDatos()
 }, [])
 
+
 return (
     <div className="contenedorTarjetas">
-    {
-        productos.map(producto => (
-        <>
-        <Item titulo={producto.nombre} precio={producto.precio} stock={producto.stock} id={producto.id}/>
-        </>
-        ))
-    }
+        {
+    productos.map(producto => (
+    <>
+    <ItemDetail titulo={producto.nombre} precio={producto.precio} stock={producto.stock} id={producto.id} img={producto.img}/>
+    </>
+    ))
+}
     </div>
 )
+
 }
-export default ItemList;
+export default AllItemsDetailContainer;
